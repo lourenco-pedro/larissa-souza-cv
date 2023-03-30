@@ -9,30 +9,30 @@ $(document).ready(()=>
     var nav_hambugermenu = $("#open-mobile-menu");
     var nav_hambugermenu_container = $('#mobile-menu-container');
 
-    getFile("../pages/aboutme.html", (content)=> draw("#info", content));
+    getFile("pages/aboutme.html", (content)=> draw("#info", content));
     
     nav_aboutme.on("click", function()
     {
         console.log(nav_aboutme);
-        getFile("../pages/aboutme.html", (content)=> draw("#info", content));
+        getFile("pages/aboutme.html", (content)=> draw("#info", content));
     });
 
     nav_educaiton.on("click", function()
     {
         console.log(nav_aboutme);
-        getFile("../pages/education.html", (content)=> draw("#info", content));
+        getFile("pages/education.html", (content)=> draw("#info", content));
     });
     
     nav_languages.on("click", function()
     {
         console.log(nav_aboutme);
-        getFile("../pages/languages.html", (content)=> draw("#info", content));
+        getFile("pages/languages.html", (content)=> draw("#info", content));
     });
     
     nav_competence.on("click", function()
     {
         console.log(nav_aboutme);
-        getFile("../pages/competence.html", (content)=> draw("#info", content));
+        getFile("pages/competence.html", (content)=> draw("#info", content));
     });
     
     nav_experience.on("click", function()
