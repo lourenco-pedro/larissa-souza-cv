@@ -1,0 +1,61 @@
+<div id="competence-view" class="scrollable-content">
+    <h1 class="main-title" style="margin-bottom: 0px;">Competence &<br>Extracurricular</h1>
+
+    <br>
+    <br>
+
+    <h2 class="font01">Competences</h2>
+    <ul id="competence-list-h">
+    </ul>
+
+    <h2 class="font01">Certificates</h2>
+    <ul id="competence-list">
+    </ul>
+</div>
+
+<script>
+    $(document).ready(() => {
+        getFile("../json/competences.json", (content) => {
+            const data = JSON.parse(content);
+            var competencesContent = "";
+            data.competences.forEach(element => {
+                competencesContent += $("#competence-list-h").html();
+                competencesContent += `<li><h2 class="font01">${element}</h2></li>`
+            });
+
+            $("#competence-list-h").html(competencesContent);
+
+            var certificatesContent = "";
+            var item = 0;
+
+            data.certificates.forEach(element => {
+                certificatesContent = $(`<li class="competence-item-buttom" id="certificate_${item}">
+                    <h2 class="font01">${element.title}</h2>
+                    <img src="../media/svg/icn-hyperlink.svg">
+                    </li>`);
+
+                certificatesContent.click(function () {
+                    var url = element.url;
+                    window.open(url, "_blank");
+                })
+
+                $("#competence-list").append(certificatesContent);
+                item++;
+            });
+            updateScreen_experience();
+
+            $(window).resize(() => {
+                updateScreen_experience();
+            });
+        });
+    });
+    function updateScreen_experience() {
+        checkScreenChange(
+            function () {
+                $("#competence-view").removeClass("scrollable-content");
+            },
+            function () {
+                $("#competence-view").addClass("scrollable-content");
+            })
+    }
+</script>

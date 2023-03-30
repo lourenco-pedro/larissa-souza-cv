@@ -1,0 +1,67 @@
+{
+    "educations": [
+        {
+            "title": "Graduating in Internation relations.",
+            "local": "University Center of Belo Horizonte",
+            "startAt": "2021",
+            "endAt": "2026",
+            "icon": "../media/svg/icn-graduation.svg"
+        },    
+        {
+            "title": "Certification to teach english in language school by CCLS.",
+            "local": "CCAA",
+            "startAt": "2014",
+            "endAt": "2026",
+            "icon": "../media/svg/icn-language.svg"
+        },   
+        {
+            "title": "Certification to teach english in language school by CCLS.",
+            "local": "CCAA",
+            "startAt": "2014",
+            "endAt": "2026",
+            "icon": "../media/svg/icn-language.svg"
+        },   
+        {
+            "title": "Certification to teach english in language school by CCLS.",
+            "local": "CCAA",
+            "startAt": "2014",
+            "endAt": "2026",
+            "icon": "../media/svg/icn-language.svg"
+        },   
+        {
+            "title": "Certification to teach english in language school by CCLS.",
+            "local": "CCAA",
+            "startAt": "2014",
+            "endAt": "2026",
+            "icon": "../media/svg/icn-language.svg"
+        },   
+        {
+            "title": "Certification to teach english in language school by CCLS.",
+            "local": "CCAA",
+            "startAt": "2014",
+            "endAt": "2026",
+            "icon": "../media/svg/icn-language.svg"
+        },   
+        {
+            "title": "Certification to teach english in language school by CCLS.",
+            "local": "CCAA",
+            "startAt": "2014",
+            "endAt": "2026",
+            "icon": "../media/svg/icn-language.svg"
+        },   
+        {
+            "title": "Certification to teach english in language school by CCLS.",
+            "local": "CCAA",
+            "startAt": "2014",
+            "endAt": "2026",
+            "icon": "../media/svg/icn-language.svg"
+        },   
+        {
+            "title": "Certification to teach english in language school by CCLS.",
+            "local": "CCAA",
+            "startAt": "2014",
+            "endAt": "2026",
+            "icon": "../media/svg/icn-language.svg"
+        }   
+    ]
+}

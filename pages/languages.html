@@ -1,0 +1,72 @@
+<div id="languages-view" class="scrollable-content" style="padding-right: 10px;">
+    <h1 class="main-title" style="margin-bottom: 0px;">Languages</h1>
+    <br>
+    <br>
+    <p style="background-color: #D8DDDF; height: fit-content; padding: 15px; border-radius: 25px;">
+        This page uses the Common European Framework of Reference (CEFR) to measure my skills in a certain language. For
+        more information about this
+        type of proficiency measure, please refer <a
+            href="https://pt.wikipedia.org/wiki/Quadro_Europeu_Comum_de_Refer%C3%AAncia_para_as_L%C3%ADnguas">to this
+            link</a>
+    </p>
+    <div id="proeficiency-box">
+
+        <div id="proeficiency-tiers" style="display: inline-flex;">
+            <h2 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; width: 150px; text-align: right;">
+            </h2>
+            <ul style="margin-top: 26.56px; list-style: none; display: inherit;">
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+            </ul>
+        </div>
+        <br>
+    </div>
+</div>
+<script>
+    $(document).ready(() => {
+        getFile("../json/languages.json", (content) => {
+            const data = JSON.parse(content);
+
+            let lastHtml = $("#proeficiency-box").html();
+            data.languages.forEach(element => {
+                lastHtml += `
+                <div  style="display: inline-flex;">
+                    <h2 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; width: 15vw; max-width: 150px; text-align: right;">${element.name}</h2>
+                    <ul class="tier-ul" style="margin-top: 26.56px;">
+                        <li><div class="${element.level >= 1 ? "tier-ul-cover" : ""}"></div></li>
+                        <li><div class="${element.level >= 2 ? "tier-ul-cover" : ""}"></div></li>
+                    </ul>
+                    <ul class="tier-ul" style="margin-top: 26.56px;">
+                        <li><div class="${element.level >= 3 ? "tier-ul-cover" : ""}"></div></li>
+                        <li><div class="${element.level >= 4 ? "tier-ul-cover" : ""}"></div></li>
+                    </ul>
+                    <ul class="tier-ul" style="margin-top: 26.56px;">
+                        <li><div class="${element.level >= 5 ? "tier-ul-cover" : ""}"></div></li>
+                        <li><div class="${element.level >= 6 ? "tier-ul-cover" : ""}"></div></li>
+                    </ul>
+                </div>
+                `;
+            });
+
+
+            $("#proeficiency-box").html(lastHtml);
+        });
+        
+        updateScreen_experience();
+
+        $(window).resize(() => {
+            updateScreen_experience();
+        });
+
+        function updateScreen_experience() {
+            checkScreenChange(
+                function () {
+                    $("#languages-view").removeClass("scrollable-content");
+                },
+                function () {
+                    $("#languages-view").addClass("scrollable-content");
+                })
+        }
+    });
+</script>

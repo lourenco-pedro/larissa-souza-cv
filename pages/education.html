@@ -1,0 +1,48 @@
+<h1 class="main-title">
+    Education
+</h1>
+
+<div id="education-view" class="scrollable-content">
+</div>
+
+<script>
+    $(document).ready(()=>{
+        getFile("../json/education.json", (content)=>
+        {
+            const data = JSON.parse(content);
+            
+            let lastHtml = "";
+            data.educations.forEach(element => {
+
+                const icon = `<img src=${element.icon} width="64" style="opacity: .5;">\n`;
+                const title = `<h2 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 28px; margin: 0px;  width: 50%;">${element.title}</h2>\n`;
+                const local = `<h2 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 20px; margin: 0px;">At ${element.local}</h3>\n`;
+                const duration = `<h2 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 20px; margin: 0px;">${element.startAt} - ${element.endAt}</h3>\n<br><br>`;
+
+                lastHtml += icon + title + local + duration;
+            });
+
+            $("#education-view").html(lastHtml);
+        });
+
+        updateScreen_education();
+
+        $(window).resize(()=>
+        {
+            updateScreen_education();
+        });
+    });
+
+    function updateScreen_education()
+    {
+        checkScreenChange(
+                function()
+                {
+                    $("#education-view").removeClass("scrollable-content");
+                },
+                function()
+                {
+                    $("#education-view").addClass("scrollable-content");
+                })
+    }
+</script>
