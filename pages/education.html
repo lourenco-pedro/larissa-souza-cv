@@ -7,10 +7,11 @@
 
 <script>
     $(document).ready(()=>{
-        getFile("../json/education.json", (content)=>
+        getFile("json/education.json", (content)=>
         {
             const data = JSON.parse(content);
             
+
             let lastHtml = "";
             data.educations.forEach(element => {
 

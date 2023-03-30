@@ -15,7 +15,7 @@
 
 <script>
     $(document).ready(() => {
-        getFile("../json/competences.json", (content) => {
+        getFile("json/competences.json", (content) => {
             const data = JSON.parse(content);
             var competencesContent = "";
             data.competences.forEach(element => {
@@ -31,7 +31,7 @@
             data.certificates.forEach(element => {
                 certificatesContent = $(`<li class="competence-item-buttom" id="certificate_${item}">
                     <h2 class="font01">${element.title}</h2>
-                    <img src="../media/svg/icn-hyperlink.svg">
+                    <img src="media/svg/icn-hyperlink.svg">
                     </li>`);
 
                 certificatesContent.click(function () {

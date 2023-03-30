@@ -38,7 +38,7 @@ $(document).ready(()=>
     nav_experience.on("click", function()
     {
         console.log(nav_aboutme);
-        getFile("../pages/experience.html", (content)=> draw("#info", content));
+        getFile("pages/experience.html", (content)=> draw("#info", content));
     });
 
     window.addEventListener('popstate', ()=>

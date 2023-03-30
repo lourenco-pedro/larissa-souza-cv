@@ -25,7 +25,7 @@
 </div>
 <script>
     $(document).ready(() => {
-        getFile("../json/languages.json", (content) => {
+        getFile("json/languages.json", (content) => {
             const data = JSON.parse(content);
 
             let lastHtml = $("#proeficiency-box").html();

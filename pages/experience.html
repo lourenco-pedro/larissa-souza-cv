@@ -7,7 +7,7 @@
 
 <script>
     $(document).ready(()=>{
-        getFile("../json/experience.json", (content)=>
+        getFile("json/experience.json", (content)=>
         {
             const data = JSON.parse(content);
             
@@ -28,7 +28,7 @@
 
             $("#lets-get-in-touch").click(()=>
             {
-                getFile("../pages/contactme.html", (content) => append("body", content));
+                getFile("pages/contactme.html", (content) => append("body", content));
             });
         });
 
